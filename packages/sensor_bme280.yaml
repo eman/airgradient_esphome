@@ -1,0 +1,41 @@
+
+bme280_i2c:
+  address: 0x76
+  sample_rate: ulp  # Ultra Low Power: every 5 minutes
+  update_interval: 30s
+  iir_filter: 16x
+
+sensor:
+  # https://esphome.io/components/sensor/bme680_bsec.html
+  - platform: bme280_i2c
+    temperature:
+      name: "Temperature"
+      id: temperature
+      device_class: temperature
+      accuracy_decimals: 1
+      filters:
+        - clamp:
+            min_value: -40.0
+            max_value: 95.0
+        - median:
+            window_size: 3
+            send_every: 3
+        - lambda: |-
+            if (isnan(id(temperature).state)) return x;
+            if (fabs(x - id(temperature).state) > 10.0) return id(temperature).state;
+            return x;
+    pressure:
+      name: "Pressure"
+      id: pressure
+      device_class: pressure
+    humidity:
+      name: "Humidity"
+      id: humidity
+      device_class: humidity
+
+  - platform: absolute_humidity
+    name: Absolute Humidity
+    temperature: temperature
+    humidity: humidity
+    id: abs_humidity
+    unit_of_measurement: "g/m³"
