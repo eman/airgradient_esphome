@@ -1,0 +1,41 @@
+substitutions:
+  config_version: 5.3.0
+
+esphome:
+  name: "${name}"
+  friendly_name: "${friendly_name}"
+  name_add_mac_suffix: ${name_add_mac_suffix}  # Set to false if you don't want part of the MAC address in the name
+
+  project:
+    name: eman.airgradient
+    version: "$config_version"
+  min_version: 2025.5.0
+
+esp32:
+  board: lolin_s2_mini
+  restore_from_flash: true  # Used to store state of display config
+  framework:
+    type: esp-idf
+
+# Enable logging
+# https://esphome.io/components/logger.html
+logger:
+
+uart:
+  # https://esphome.io/components/uart.html#uart
+  - rx_pin: GPIO16  # D4
+    tx_pin: GPIO18  # D3
+    baud_rate: 9600
+    id: senseair_co2_uart
+
+  - rx_pin: GPIO7 # D5
+    tx_pin: GPIO9 # D6
+    baud_rate: 9600
+    id: pms5003_uart
+
+i2c:
+  # https://esphome.io/components/i2c.html
+  sda: GPIO33  # D2
+  scl: GPIO35  # D1
+  frequency: 400kHz  # 400kHz eliminates warnings about components taking a long time other than SGP40 component: https://github.com/esphome/issues/issues/4717
+
