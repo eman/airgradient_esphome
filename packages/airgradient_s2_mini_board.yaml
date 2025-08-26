@@ -13,7 +13,7 @@ esphome:
 
 esp32:
   board: lolin_s2_mini
-  restore_from_flash: true  # Used to store state of display config
+  # restore_from_flash: true  # Used to store state of display config
   framework:
     type: esp-idf
 
