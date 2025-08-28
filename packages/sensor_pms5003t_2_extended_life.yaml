@@ -153,7 +153,8 @@ sensor:
   - platform: template
     id: temp_avg
     name: "Temperature (Average)"
-    lambda: return (id(temp).state + id(temp_2).state) / 2.0;
+    lambda: |-
+      return (id(temperature).state + id(temp_2).state) / 2.0;
     unit_of_measurement: °C
     accuracy_decimals: 1
     device_class: temperature

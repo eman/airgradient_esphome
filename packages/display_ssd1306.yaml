@@ -30,10 +30,10 @@ display:
         lambda: |-
           if (id(display_in_f).state) {
               it.print(0, 0, id(font1), "°F");
-              it.printf(64, 22, id(font1), TextAlign::TOP_RIGHT, "%.1f", id(temp).state*9/5+32);
+              it.printf(64, 22, id(font1), TextAlign::TOP_RIGHT, "%.1f", id(temperature).state*9/5+32);
             } else {
               it.print(0, 0, id(font1), "°C");
-              it.printf(64, 22, id(font1), TextAlign::TOP_RIGHT, "%.1f°C", id(temp).state);
+              it.printf(64, 22, id(font1), TextAlign::TOP_RIGHT, "%.1f°C", id(temperature).state);
             }
       - id: display_humidity
         lambda: |-

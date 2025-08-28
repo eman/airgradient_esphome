@@ -37,7 +37,7 @@ sensor:
             send_every: 30
     temperature:
       name: "Temperature"
-      id: temp
+      id: temperature
       icon: "mdi:thermometer"
       filters:
         - sliding_window_moving_average:
