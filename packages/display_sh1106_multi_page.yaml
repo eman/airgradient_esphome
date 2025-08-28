@@ -31,9 +31,9 @@ display:
         # https://forum.airgradient.com/t/airgradient-one-customized-mallocarray-esphome-display/1328
         lambda: |-
           if (id(display_in_f).state) {
-            it.printf(0, 0, id(open_sans_14), "%.1f°F", id(temp).state*9/5+32);
+            it.printf(0, 0, id(open_sans_14), "%.1f°F", id(temperature).state*9/5+32);
           } else {
-            it.printf(0, 0, id(open_sans_14), "%.1f°C", id(temp).state);
+            it.printf(0, 0, id(open_sans_14), "%.1f°C", id(temperature).state);
           }
           it.printf(128, 0, id(open_sans_14), TextAlign::TOP_RIGHT, "%.1f%%", id(humidity).state);
           it.line(0,17,128,17);
@@ -63,9 +63,9 @@ display:
           it.printf(128, 16, id(open_sans_14), TextAlign::TOP_RIGHT, "%.0f µg/m³", id(pm_2_5).state);
           it.printf(0, 32, id(open_sans_14), "Temp:");
           if (id(display_in_f).state) {
-            it.printf(128, 32, id(open_sans_14), TextAlign::TOP_RIGHT, "%.1f°F", id(temp).state*9/5+32);
+            it.printf(128, 32, id(open_sans_14), TextAlign::TOP_RIGHT, "%.1f°F", id(temperature).state*9/5+32);
           } else {
-            it.printf(128, 32, id(open_sans_14), TextAlign::TOP_RIGHT, "%.1f°C", id(temp).state);
+            it.printf(128, 32, id(open_sans_14), TextAlign::TOP_RIGHT, "%.1f°C", id(temperature).state);
           }
           it.printf(0, 48, id(open_sans_14), "Humidity:");
           it.printf(128, 48, id(open_sans_14), TextAlign::TOP_RIGHT, "%.1f%%", id(humidity).state);
@@ -85,9 +85,9 @@ display:
           it.printf(it.get_width(), 0 - 8, id(open_sans_34), TextAlign::TOP_RIGHT, "%.0f", id(humidity).state);
           it.printf(0, 64 + 8, id(open_sans_34), TextAlign::BOTTOM_LEFT, "%.0f", id(pm_2_5).state);
           if (id(display_in_f).state) {
-            it.printf(it.get_width(), 64 + 8, id(open_sans_34), TextAlign::BOTTOM_RIGHT, "%.1f", id(temp).state*9/5+32);
+            it.printf(it.get_width(), 64 + 8, id(open_sans_34), TextAlign::BOTTOM_RIGHT, "%.1f", id(temperature).state*9/5+32);
           } else {
-            it.printf(it.get_width(), 64 + 8, id(open_sans_34), TextAlign::BOTTOM_RIGHT, "%.1f", id(temp).state);
+            it.printf(it.get_width(), 64 + 8, id(open_sans_34), TextAlign::BOTTOM_RIGHT, "%.1f", id(temperature).state);
           }
       - id: air_quality
         lambda: |-
@@ -99,9 +99,9 @@ display:
         lambda: |-
           it.printf(0, 13, id(open_sans_14), "Temp");
           if (id(display_in_f).state) {
-            it.printf(128, 6, id(open_sans_20), TextAlign::TOP_RIGHT, "%.1f°F", id(temp).state*9/5+32);
+            it.printf(128, 6, id(open_sans_20), TextAlign::TOP_RIGHT, "%.1f°F", id(temperature).state*9/5+32);
           } else {
-            it.printf(128, 6, id(open_sans_20), TextAlign::TOP_RIGHT, "%.1f°C", id(temp).state);
+            it.printf(128, 6, id(open_sans_20), TextAlign::TOP_RIGHT, "%.1f°C", id(temperature).state);
           }
           it.printf(0, 41, id(open_sans_14), "Humid");
           it.printf(128, 34, id(open_sans_20), TextAlign::TOP_RIGHT, "%.1f%%", id(humidity).state);
@@ -114,9 +114,9 @@ display:
       - id: combo
         lambda: |-
           if (id(display_in_f).state) {
-            it.printf(0, 0, id(open_sans_14), "%.1f °F", id(temp).state*9/5+32);
+            it.printf(0, 0, id(open_sans_14), "%.1f °F", id(temperature).state*9/5+32);
           } else {
-            it.printf(0, 0, id(open_sans_14), "%.1f °C", id(temp).state);
+            it.printf(0, 0, id(open_sans_14), "%.1f °C", id(temperature).state);
           }
           it.printf(128, 0, id(open_sans_14), TextAlign::TOP_RIGHT, "%.1f%%", id(humidity).state);
           it.printf(0, 16, id(open_sans_14), "%.0f µg/m³", id(pm_2_5).state);
