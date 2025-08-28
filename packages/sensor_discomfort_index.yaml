@@ -9,10 +9,3 @@ sensor:
       return discomfortIndex;
     unit_of_measurement: "DI"
     update_interval: 60s
-
-  - platform: absolute_humidity
-    name: Absolute Humidity
-    temperature: temperature
-    humidity: humidity
-    id: abs_humidity
-    unit_of_measurement: "g/m³"
