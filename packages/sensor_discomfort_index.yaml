@@ -1,0 +1,18 @@
+sensor:
+  - platform: template
+    name: "Discomfort Index"
+    id: discomfort_index
+    lambda: |-
+      float temp = id(temperature).state;
+      float hum = id(humidity).state;
+      float discomfortIndex = (temp - 0.55) * (1 - (0.01 * (hum - 55))) + (temp - 14.5) * (0.01 * (hum - 55));
+      return discomfortIndex;
+    unit_of_measurement: "DI"
+    update_interval: 60s
+
+  - platform: absolute_humidity
+    name: Absolute Humidity
+    temperature: temperature
+    humidity: humidity
+    id: abs_humidity
+    unit_of_measurement: "g/m³"
