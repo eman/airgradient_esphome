@@ -14,7 +14,7 @@ sensor:
   - platform: copy
     source_id: temp_raw
     name: "Temperature"
-    id: temp
+    id: temperature
     # https://www.airgradient.com/documentation/correction-algorithms/
     # No current correction for indoor devices, but structure in place if developed
 

@@ -5,7 +5,8 @@ substitutions:
 
 sensor:
   - platform: pmsx003
-    # Default interval of updating every second, but changing to 30 seconds to extend life but keep fan spinning
+    # Default interval of updating every second, but changing to 30
+    # seconds to extend life but keep fan spinning
     # PMS5003 https://esphome.io/components/sensor/pmsx003.html
     type: PMSX003
     uart_id: pms5003_uart
@@ -29,7 +30,8 @@ sensor:
     update_interval: 30s
 
   - platform: template
-    # Implements PM2.5 correction algorithm supported by AirGradient from EPA and optionally batch specific corrections
+    # Implements PM2.5 correction algorithm supported by AirGradient
+    #   from EPA and optionally batch specific corrections
     # https://www.airgradient.com/documentation/correction-algorithms/
     # https://document.airnow.gov/airnow-fire-and-smoke-map-questions-and-answers.pdf
     name: "PM 2.5"
