@@ -1,13 +1,7 @@
-
-bme280_i2c:
-  address: 0x76
-  sample_rate: ulp  # Ultra Low Power: every 5 minutes
-  update_interval: 30s
-  iir_filter: 16x
-
 sensor:
-  # https://esphome.io/components/sensor/bme680_bsec.html
   - platform: bme280_i2c
+    address: 0x76
+    update_interval: 30s
     temperature:
       name: "Temperature"
       id: temperature
