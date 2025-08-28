@@ -7,7 +7,7 @@ esphome:
   name_add_mac_suffix: ${name_add_mac_suffix}  # Set to false if you don't want part of the MAC address in the name
 
   project:
-    name: mallocarray.airgradient
+    name: eman.sesnor
     version: "$config_version"
   min_version: 2025.5.0
 
