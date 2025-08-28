@@ -40,7 +40,7 @@ sensor:
   - platform: copy
     source_id: temp_raw
     name: "Temperature"
-  id: temperature
+    id: temperature
     # https://www.airgradient.com/documentation/correction-algorithms/
     filters:
       - lambda: |-
